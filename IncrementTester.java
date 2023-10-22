@@ -19,7 +19,6 @@ public class IncrementTester extends DigitDisplayKara
     public void act()
     {
         int numberOfLeaves =  increment();
-        System.out.println("after incrementing each one: ");
         System.out.println("Column "+getX()+": "+numberOfLeaves + " leaves");       
     }
 }
