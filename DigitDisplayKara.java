@@ -50,6 +50,10 @@ public class DigitDisplayKara extends Kara
     public int count(){
         return 0;
     }
+    
+    public int increment(){
+        return 0;
+    }
 
     protected String getDisplayText(int count){
         return ""+count;
@@ -73,11 +77,6 @@ public class DigitDisplayKara extends Kara
         world.addObject(bottomTree,x,y+2);
         Tree topTree = new Tree();
         world.addObject(topTree,x,y-rollOverLimit);
-        showTextAtOffset(getDisplayText(zeroValue),0,3);
-    }
-
-    private void showTextAtOffset(String text, int deltaX, int deltaY){
-        getWorld().showText(text,getX()+deltaX,getY()+deltaY);
     }
 
 }
