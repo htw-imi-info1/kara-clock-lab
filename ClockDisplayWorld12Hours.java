@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class ClockDisplayWorld1 extends World
+public class ClockDisplayWorld12Hours extends World
 {
 
     private static final int WORLD_WIDTH = 20;  // Number of horizontal cells
@@ -16,7 +16,7 @@ public class ClockDisplayWorld1 extends World
     private static final int BASELINE = 15;
     private static final int RIGHT = 10;
     private static final int STEPS_TO_FIRST_DIGIT = 5;
-    public ClockDisplayWorld1()
+    public ClockDisplayWorld12Hours()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(WORLD_WIDTH, WORLD_HEIGHT, CELL_SIZE);
@@ -25,7 +25,7 @@ public class ClockDisplayWorld1 extends World
 
         Greenfoot.setSpeed(40);
 
-        showText("ClockDisplayWorld1", 5, BASELINE-14);
+        showText("ClockDisplayWorld12Hours", 5, BASELINE-14);
         prepare();
     }
 
@@ -36,7 +36,8 @@ public class ClockDisplayWorld1 extends World
     private void prepare()
     {
         prepareColumns();
-        DisplayKara displayKara = new DisplayKara(STEPS_TO_FIRST_DIGIT);
+        
+        ClockDisplayKara displayKara = new ClockDisplayKara(STEPS_TO_FIRST_DIGIT);
         addObject(displayKara,RIGHT+STEPS_TO_FIRST_DIGIT,BASELINE+1);
 
         displayKara.count();
@@ -47,7 +48,7 @@ public class ClockDisplayWorld1 extends World
         
         DigitDisplayKara minutes = new DigitDisplayKara(10,1,1);
         DigitDisplayKara tenMinutes = new DigitDisplayKara(6,10,2);
-        DigitDisplayKara hours = new DigitDisplayKara(12,60,0);
+        HoursDisplayKara hours = new HoursDisplayKara(12,60,0);
         
         addObject(minutes,RIGHT,BASELINE);
         addObject(tenMinutes,RIGHT-1,BASELINE);

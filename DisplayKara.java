@@ -69,7 +69,7 @@ public class DisplayKara extends Kara
         while(!treeFront()) move();
         turnAround();
     }
-    
+
     public void setValue(long newValue){
         int stepsToNext = stepsToFirstKara;
         // at last kara, facing left
@@ -112,6 +112,13 @@ public class DisplayKara extends Kara
 
     private void showTextAtOffset(String text, int deltaX, int deltaY){
         getWorld().showText(text,getX()+deltaX,getY()+deltaY);
+    }
+
+    protected void addedToWorld(World world){
+        turnLeft();
+        turnLeft();
+        Tree tree = new Tree();
+        world.addObject(tree,getX()+1,getY());
     }
 
 }

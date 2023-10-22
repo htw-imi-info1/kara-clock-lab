@@ -40,12 +40,9 @@ public class DigitalNumber extends World
     private void prepare()
     {
         prepareColumns();
-        DisplayKara callingKara = new DisplayKara(2);
-        addObject(callingKara,15,16);
-        callingKara.turnLeft();
-        callingKara.turnLeft();
-        Tree tree19 = new Tree();
-        addObject(tree19,16,16);
+        DisplayKara displayKara = new DisplayKara(2);
+        addObject(displayKara,15,16);
+
     }
 
     private void prepareColumns(){
