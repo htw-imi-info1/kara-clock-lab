@@ -55,24 +55,48 @@ public class DigitDisplayKara extends Kara
     public int increment(){
         return 0;
     }
-    
+
     public void setCount(int leaves){
-        
+
     }
-    
-    protected String getDisplayText(int count){
+
+    public String getDisplayText(int count){
         return ""+count;
     }
 
+    /*
+     * 
+     * You don't need to change anything in the methods below.
+     * 
+     * 
+     * 
+     */
+
+    public void setPlaceTrees(boolean doPlaceTrees){
+        placeTrees = doPlaceTrees;
+    }
+
+    public void setStepsToNextDigit(int i){
+        stepsToNextDigit = i;
+    }
+
+    public int getStepsToNext(){
+        return stepsToNextDigit;
+    }
+
+    public long getPlaceValue(){
+        return placeValue;
+    }
+
+    public int getRollOverLimit(){
+        return rollOverLimit;
+    }
+
     protected void addedToWorld(World world){
-        initDisplay(world);
+        addTrees(world);
     }
 
-    protected void placeTrees(){
-        placeTrees = true;
-    }
-
-    private void initDisplay(World world){
+    private void addTrees(World world){
         if (!placeTrees)
             return;
         turnLeft();
@@ -82,22 +106,6 @@ public class DigitDisplayKara extends Kara
         world.addObject(bottomTree,x,y+2);
         Tree topTree = new Tree();
         world.addObject(topTree,x,y-rollOverLimit);
-    }
-
-    protected void setStepsToNextDigit(int i){
-        stepsToNextDigit = i;
-    }
-
-    protected int getStepsToNext(){
-        return stepsToNextDigit;
-    }
-
-    protected long getPlaceValue(){
-        return placeValue;
-    }
-
-    protected int getRollOverLimit(){
-        return rollOverLimit;
     }
 
 }
