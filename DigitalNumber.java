@@ -49,7 +49,7 @@ public class DigitalNumber extends World
     }
     DigitDisplayKara kara = null;
     private void prepareColumns(){
-        for (int i = 0; i< NUMBER_OF_DIGITS-1; i++){
+        for (int i = 0; i< NUMBER_OF_DIGITS; i++){
             int column = RIGHT-i;
             long placeValue = (long)Math.pow(BASE,i);
 

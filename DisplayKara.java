@@ -68,6 +68,25 @@ public class DisplayKara extends Kara
         while(!treeFront()) move();
         turnAround();
     }
+    
+    public void setValue(long newValue){
+        int stepsToNext = stepsToFirstKara;
+        // at last kara, facing left
+        while(stepsToNext != 0){
+            multiMove(stepsToNext);
+            turnRight();
+            DigitDisplayKara digitKara = getKaraAbove();
+            int faceValue = (int)(newValue / digitKara.getPlaceValue());
+            faceValue = faceValue % digitKara.getRollOverLimit();
+            digitKara.setCount(faceValue); 
+            stepsToNext = digitKara.getStepsToNext();
+            showTextAtOffset(digitKara.getDisplayText(faceValue),0,2);
+            turnLeft();
+        }
+        turnAround();
+        while(!treeFront()) move();
+        turnAround();
+    }
 
     private void turnAround(){
         turnRight();turnRight();

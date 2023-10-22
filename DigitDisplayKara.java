@@ -55,7 +55,11 @@ public class DigitDisplayKara extends Kara
     public int increment(){
         return 0;
     }
-
+    
+    public void setCount(int leaves){
+        
+    }
+    
     protected String getDisplayText(int count){
         return ""+count;
     }
@@ -90,6 +94,10 @@ public class DigitDisplayKara extends Kara
 
     protected long getPlaceValue(){
         return placeValue;
+    }
+
+    protected int getRollOverLimit(){
+        return rollOverLimit;
     }
 
 }
