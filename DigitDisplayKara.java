@@ -6,7 +6,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class DigitDisplayKara extends Kara
 {
     boolean placeTrees = true;
-    int stepsToNextDigit, rollOverLimit, placeValue;
+    int stepsToNextDigit, rollOverLimit;
+    long placeValue;
     int zeroValue = 0;
 
     public DigitDisplayKara(){
@@ -19,7 +20,7 @@ public class DigitDisplayKara extends Kara
         this.placeTrees = placeTrees;
     }
 
-    public DigitDisplayKara(int rollOverLimit, int placeValue, int stepsToNextDigit)
+    public DigitDisplayKara(int rollOverLimit, long placeValue, int stepsToNextDigit)
     {
         this.rollOverLimit = rollOverLimit;
         this.stepsToNextDigit = stepsToNextDigit;
@@ -50,7 +51,7 @@ public class DigitDisplayKara extends Kara
     public int count(){
         return 0;
     }
-    
+
     public int increment(){
         return 0;
     }
@@ -77,6 +78,18 @@ public class DigitDisplayKara extends Kara
         world.addObject(bottomTree,x,y+2);
         Tree topTree = new Tree();
         world.addObject(topTree,x,y-rollOverLimit);
+    }
+
+    protected void setStepsToNextDigit(int i){
+        stepsToNextDigit = i;
+    }
+
+    protected int getStepsToNext(){
+        return stepsToNextDigit;
+    }
+
+    protected long getPlaceValue(){
+        return placeValue;
     }
 
 }
