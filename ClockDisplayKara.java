@@ -46,6 +46,15 @@ public class ClockDisplayKara extends DisplayKara
 
     public void stop(){
         clockRunning = false;
+        try
+        {
+            clockThread.join();
+        }
+        catch (InterruptedException ie)
+        {
+            ie.printStackTrace();
+        }
+        clockThread = null;
     }
 
     protected void addedToWorld(World world){
