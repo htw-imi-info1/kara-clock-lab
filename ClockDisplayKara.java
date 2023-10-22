@@ -27,12 +27,12 @@ public class ClockDisplayKara extends DisplayKara
     }
 
     @Override
-    public void tick(){
+    public synchronized void tick(){
         modCount++;
         super.tick();
     }
 
-    public void setTime(int hours, int minutes){
+    public synchronized void setTime(int hours, int minutes){
         super.setValue(hours*60+minutes);
     }
 
