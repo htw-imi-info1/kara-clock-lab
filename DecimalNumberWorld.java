@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class DigitalNumber extends World
+public class DecimalNumberWorld extends World
 {
 
     private static final int WORLD_WIDTH = 20;  // Number of horizontal cells
@@ -20,7 +20,7 @@ public class DigitalNumber extends World
 
     private static final int LIMIT = 10;
 
-    public DigitalNumber()
+    public DecimalNumberWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(WORLD_WIDTH, WORLD_HEIGHT, CELL_SIZE);
@@ -29,7 +29,7 @@ public class DigitalNumber extends World
 
         Greenfoot.setSpeed(40);
 
-        showText("DigitalNumber", 8, BASELINE-LIMIT-3);
+        showText("DecimalNumberWorld", 8, BASELINE-LIMIT-3);
         prepare();
     }
 
