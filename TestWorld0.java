@@ -30,7 +30,7 @@ public class TestWorld0 extends World
         showText("TestWorld0", 6, 1);
         prepare();
     }
-    
+
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -38,8 +38,9 @@ public class TestWorld0 extends World
     private void prepare()
     {
 
-        DigitDisplayKara DigitDisplayKara = new DigitDisplayKara();
-        addObject(DigitDisplayKara,9,10);
-        DigitDisplayKara.turnLeft();
+        DigitDisplayKara kara = new DigitDisplayKara();
+        addObject(kara,9,15);
+        kara.turnLeft();
+        
     }
 }

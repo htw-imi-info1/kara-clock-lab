@@ -13,7 +13,9 @@ public class TestWorld5 extends World
     private static final int WORLD_HEIGHT = 20;  // Number of vertical cells
     private static final int SPEED = 40;
     private static final int CELL_SIZE = 28; // Size of one cell
-    private static final int BASELINE = 18;
+    private static final int BASELINE = 15;
+    private static final int LEFT = 5;
+    
     private static final int LIMIT = 10;
 
     public TestWorld5()
@@ -35,24 +37,26 @@ public class TestWorld5 extends World
      */
     private void prepare()
     {
-        prepareColumn(4,6);
-        prepareColumn(6,3);
-        prepareColumn(8,9);
-        prepareColumn(10,0);
-        prepareColumn(12,1);
+        prepareColumn(LEFT,6);
+        prepareColumn(LEFT+2,3);
+        prepareColumn(LEFT+4,9);
+        prepareColumn(LEFT+6,0);
+        prepareColumn(LEFT+8,1);
     }
 
     private void prepareColumn(int column, int numberOfLeaves){
+
+        MoveUpAndCountTester kara = new MoveUpAndCountTester();
+        addObject(kara,column,BASELINE-1);
+        
+        /*
         Tree lowerTree = new Tree();
         Tree upperTree = new Tree();
-        MoveUpAndCountTester DigitDisplayKara = new MoveUpAndCountTester();
-        DigitDisplayKara.turnLeft();
-        
         addObject(upperTree,column,BASELINE-LIMIT-1);
-        int lowestLeafRow = BASELINE-2;
-        addObject(DigitDisplayKara,column,BASELINE-1);
         addObject(lowerTree,column,BASELINE);
-        
+        */
+       
+        int lowestLeafRow = BASELINE-2;
         for (int i = 0; i<numberOfLeaves; i++){
             Leaf leaf = new Leaf();
             addObject(leaf,column, lowestLeafRow-i);

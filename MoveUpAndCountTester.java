@@ -8,11 +8,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MoveUpAndCountTester extends DigitDisplayKara
 {
+    public MoveUpAndCountTester(){
+        super(true);
+    }
+
     /**
      * Act - do whatever the MoveUpAndCountTester wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-   public void act()
+    public void act()
     {
         int numberOfLeaves =  moveUpAndCount();
         System.out.println("Column "+getX()+": "+numberOfLeaves + " leaves");       
