@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class DigitalNumber extends World
+public class ClockDisplayWorld1 extends World
 {
 
     private static final int WORLD_WIDTH = 20;  // Number of horizontal cells
@@ -14,13 +14,9 @@ public class DigitalNumber extends World
     private static final int SPEED = 40;
     private static final int CELL_SIZE = 28; // Size of one cell
     private static final int BASELINE = 15;
-    private static final int RIGHT = 13;
-    private static final int NUMBER_OF_DIGITS = 10;
-    private static final int BASE = 10;
-
-    private static final int LIMIT = 10;
-
-    public DigitalNumber()
+    private static final int RIGHT = 10;
+    private static final int STEPS_TO_FIRST_DIGIT = 5;
+    public ClockDisplayWorld1()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(WORLD_WIDTH, WORLD_HEIGHT, CELL_SIZE);
@@ -29,7 +25,7 @@ public class DigitalNumber extends World
 
         Greenfoot.setSpeed(40);
 
-        showText("DigitalNumber", 8, BASELINE-LIMIT-3);
+        showText("ClockDisplayWorld1", 8, BASELINE-13);
         prepare();
     }
 
@@ -40,23 +36,25 @@ public class DigitalNumber extends World
     private void prepare()
     {
         prepareColumns();
-        DisplayKara callingKara = new DisplayKara(2);
-        addObject(callingKara,15,16);
+        DisplayKara callingKara = new DisplayKara(STEPS_TO_FIRST_DIGIT);
+        addObject(callingKara,RIGHT+STEPS_TO_FIRST_DIGIT,BASELINE+1);
         callingKara.turnLeft();
         callingKara.turnLeft();
         Tree tree19 = new Tree();
-        addObject(tree19,16,16);
+        addObject(tree19,RIGHT+STEPS_TO_FIRST_DIGIT+1,BASELINE+1);
+        
     }
-
+    
     private void prepareColumns(){
-        DigitDisplayKara kara = null;
-        for (int i = 0; i< NUMBER_OF_DIGITS; i++){
-            int column = RIGHT-i;
-            long placeValue = (long)Math.pow(BASE,i);
-
-            kara = new DigitDisplayKara(BASE,placeValue,1);
-            addObject(kara,column,BASELINE);
-        }
-        kara.setStepsToNextDigit(0); // last Kara
+        
+        DigitDisplayKara minutes = new DigitDisplayKara(10,1,1);
+        DigitDisplayKara tenMinutes = new DigitDisplayKara(6,10,2);
+        DigitDisplayKara hours = new DigitDisplayKara(12,60,0);
+        
+        addObject(minutes,RIGHT,BASELINE);
+        addObject(tenMinutes,RIGHT-1,BASELINE);
+        showText(":", RIGHT-2,BASELINE+3);
+        addObject(hours,RIGHT-3,BASELINE);
+         
     }
 }
