@@ -42,14 +42,14 @@ public class DigitDisplayKara extends Kara
 
     }
 
-    public int count(){
-        return 0;
-    }
-
     /*
      * ------- replace with your methods from lab 02 : end -----------
      * ------- (don't forget the turnaround method!) -----------
      */
+
+    public int count(){
+        return 0;
+    }
 
     protected String getDisplayText(int count){
         return ""+count;
