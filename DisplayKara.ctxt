@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=DisplayKara
+comment0.text=\n\ CallingKara\ is\ a\ subclass\ of\ Kara.\ Therefore,\ it\ inherits\ all\ methods\ of\ Kara\:\ <p>\n\ \n\ <i>CallingKara\ ist\ eine\ Unterklasse\ von\ Kara.\ Sie\ erbt\ damit\ alle\ Methoden\ der\ Klasse\ Kara\:</i>\ <p>\n\ \n\ Actions\:\ \ \ \ \ move(),\ turnLeft(),\ turnRight(),\ putLeaf(),\ removeLeaf()\ <b>\n\ Sensors\:\ \ \ \ \ onLeaf(),\ treeFront(),\ treeLeft(),\ treeRight(),\ mushroomFront()\n
+comment1.params=stepsToFirstKara
+comment1.target=DisplayKara(int)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ In\ the\ 'act()'\ method\ you\ can\ write\ your\ program\ for\ Kara\ <br>\n\ <i>In\ der\ Methode\ 'act()'\ koennen\ die\ Befehle\ fuer\ Kara\ programmiert\ werden</i>\n
+comment3.params=
+comment3.target=long\ tick()
+comment4.params=
+comment4.target=void\ turnAround()
+comment5.params=n
+comment5.target=void\ multiMove(int)
+comment6.params=
+comment6.target=DigitDisplayKara\ getKaraAbove()
+comment7.params=text\ deltaX\ deltaY
+comment7.target=void\ showTextAtOffset(java.lang.String,\ int,\ int)
+numComments=8
