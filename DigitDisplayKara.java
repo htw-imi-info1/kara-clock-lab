@@ -56,7 +56,7 @@ public class DigitDisplayKara extends Kara
         return 0;
     }
 
-    public void setCount(int leaves){
+    public void initialize(int leaves){
 
     }
 

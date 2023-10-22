@@ -37,5 +37,5 @@ comment7.text=\n\ -------\ replace\ with\ your\ methods\ from\ lab\ 02\ \:\ end\
 comment8.params=
 comment8.target=int\ increment()
 comment9.params=leaves
-comment9.target=void\ setCount(int)
+comment9.target=void\ initialize(int)
 numComments=18

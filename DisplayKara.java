@@ -79,7 +79,7 @@ public class DisplayKara extends Kara
             DigitDisplayKara digitKara = getKaraAbove();
             int faceValue = (int)(newValue / digitKara.getPlaceValue());
             faceValue = faceValue % digitKara.getRollOverLimit();
-            digitKara.setCount(faceValue); 
+            digitKara.initialize(faceValue); 
             stepsToNext = digitKara.getStepsToNext();
             showTextAtOffset(digitKara.getDisplayText(faceValue),0,2);
             turnLeft();
