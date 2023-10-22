@@ -42,6 +42,7 @@ public class TestWorld6Count extends World
         prepareColumn(LEFT+4,9);
         prepareColumn(LEFT+6,0);
         prepareColumn(LEFT+8,1);
+        prepareColumn(LEFT+10,8);
     }
 
     private void prepareColumn(int column, int numberOfLeaves){
