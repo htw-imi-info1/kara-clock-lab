@@ -28,7 +28,7 @@ public class DisplayKara extends Kara
         tick();
     } 
 
-    public long tick(){
+    public long count(){
         int stepsToNext = stepsToFirstKara;
         long sum = 0;
         // at last kara, facing left
@@ -36,27 +36,44 @@ public class DisplayKara extends Kara
             multiMove(stepsToNext);
             turnRight();
             DigitDisplayKara digitKara = getKaraAbove();
-            int value = digitKara.increment();
+            int value = digitKara.count();
             sum = sum + value * digitKara.getPlaceValue();
-            showTextAtOffset(digitKara.getDisplayText(value),0,2);
-            if (value == 0)
-                stepsToNext = digitKara.getStepsToNext();
-            else 
-                stepsToNext = 0; // done
-            
+            stepsToNext = digitKara.getStepsToNext();
             turnLeft();
         }
         turnAround();
         while(!treeFront()) move();
         turnAround();
         return sum;
+
     }
 
-    public void turnAround(){
+    public void tick(){
+        int stepsToNext = stepsToFirstKara;
+        // at last kara, facing left
+        while(stepsToNext != 0){
+            multiMove(stepsToNext);
+            turnRight();
+            DigitDisplayKara digitKara = getKaraAbove();
+            int value = digitKara.increment();
+            showTextAtOffset(digitKara.getDisplayText(value),0,2);
+            if (value == 0)
+                stepsToNext = digitKara.getStepsToNext();
+            else 
+                stepsToNext = 0; // done
+
+            turnLeft();
+        }
+        turnAround();
+        while(!treeFront()) move();
+        turnAround();
+    }
+
+    private void turnAround(){
         turnRight();turnRight();
     }
 
-    public void multiMove(int n){
+    private void multiMove(int n){
         if (n<0)
             turnAround();
         for(int i=0;i<n;i++)
@@ -65,15 +82,15 @@ public class DisplayKara extends Kara
             turnAround();
     }
 
-    public DigitDisplayKara getKaraAbove(){
+    private DigitDisplayKara getKaraAbove(){
         List<DigitDisplayKara> objects = getWorld().getObjectsAt(getX(),getY()-1,DigitDisplayKara.class);
         if (objects != null && objects.size() > 0)
             return objects.get(0);
         else 
             return null;
     }
-    
-    public void showTextAtOffset(String text, int deltaX, int deltaY){
+
+    private void showTextAtOffset(String text, int deltaX, int deltaY){
         getWorld().showText(text,getX()+deltaX,getY()+deltaY);
     }
 
