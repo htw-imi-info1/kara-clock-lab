@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=DigitDisplayKara
+comment0.text=\n\ This\ will\ be\ one\ Digit\ in\ the\ KaraClock\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=int\ moveUpAndCount()
+comment3.params=n
+comment3.target=void\ multiMove(int)
+numComments=4
