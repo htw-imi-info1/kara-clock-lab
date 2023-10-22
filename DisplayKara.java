@@ -96,7 +96,8 @@ public class DisplayKara extends Kara
     private void multiMove(int n){
         if (n<0)
             turnAround();
-        for(int i=0;i<n;i++)
+        int steps = Math.abs(n);
+        for(int i=0;i<steps;i++)
             move();
         if (n<0)
             turnAround();
