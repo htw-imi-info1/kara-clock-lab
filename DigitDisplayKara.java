@@ -13,6 +13,7 @@ public class DigitDisplayKara extends Kara
         this(10,1,0);
         placeTrees = false;
     }
+
     public DigitDisplayKara(boolean placeTrees){
         this(10,1,0);
         this.placeTrees = placeTrees;
@@ -39,6 +40,10 @@ public class DigitDisplayKara extends Kara
 
     public void multiMove(int n){
 
+    }
+
+    public int count(){
+        return 0;
     }
 
     /*
