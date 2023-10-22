@@ -37,6 +37,7 @@ public class DisplayKara extends Kara
             turnRight();
             DigitDisplayKara digitKara = getKaraAbove();
             int value = digitKara.count();
+            showTextAtOffset(digitKara.getDisplayText(value),0,2);
             sum = sum + value * digitKara.getPlaceValue();
             stepsToNext = digitKara.getStepsToNext();
             turnLeft();

@@ -25,7 +25,7 @@ public class ClockDisplayWorld1 extends World
 
         Greenfoot.setSpeed(40);
 
-        showText("ClockDisplayWorld1", 8, BASELINE-13);
+        showText("ClockDisplayWorld1", 5, BASELINE-14);
         prepare();
     }
 
@@ -42,6 +42,7 @@ public class ClockDisplayWorld1 extends World
         callingKara.turnLeft();
         Tree tree19 = new Tree();
         addObject(tree19,RIGHT+STEPS_TO_FIRST_DIGIT+1,BASELINE+1);
+        callingKara.count();
         
     }
     
