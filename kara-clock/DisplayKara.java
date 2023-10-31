@@ -2,7 +2,7 @@ import greenfoot.*;
 import java.util.List;
 
 /**
- * CallingKara is a subclass of Kara. Therefore, it inherits all methods of Kara: <p>
+ * DisplayKara is a subclass of Kara. Therefore, it inherits all methods of Kara: <p>
  * 
  * <i>CallingKara ist eine Unterklasse von Kara. Sie erbt damit alle Methoden der Klasse Kara:</i> <p>
  * 
@@ -25,7 +25,7 @@ public class DisplayKara extends Kara
      */
     public void act() 
     {
-        tick();
+        timeTick();
     } 
 
     public long count(){
@@ -49,7 +49,7 @@ public class DisplayKara extends Kara
 
     }
 
-    public void tick(){
+    public void timeTick(){
         int stepsToNext = stepsToFirstKara;
         // at last kara, facing left
         while(stepsToNext != 0){

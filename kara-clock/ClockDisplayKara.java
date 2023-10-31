@@ -10,8 +10,7 @@ import java.time.LocalDateTime;
 public class ClockDisplayKara extends DisplayKara
 {
     private int modCount = 0;
-    private ClockThread clockThread;
-    private boolean clockRunning = false;
+
 
     public ClockDisplayKara(int stepsToFirstKara){
         super(stepsToFirstKara);
@@ -23,13 +22,13 @@ public class ClockDisplayKara extends DisplayKara
      */
     public void act()
     {
-        tick();
+        timeTick();
     }
 
     @Override
-    public synchronized void tick(){
+    public synchronized void timeTick(){
         modCount++;
-        super.tick();
+        super.timeTick();
     }
 
     public synchronized void setTime(int hours, int minutes){
@@ -62,6 +61,8 @@ public class ClockDisplayKara extends DisplayKara
         start();
     }
 
+    private ClockThread clockThread;
+    private boolean clockRunning = false;
     class ClockThread extends Thread{
 
         private int pause = 300;
@@ -104,7 +105,7 @@ public class ClockDisplayKara extends DisplayKara
                 if (diff > 0)
                     if (checkModCount())
                         for (int i=0;i<diff;i++){
-                            clockDisplay.tick();
+                            clockDisplay.timeTick();
                             clockModCount++;
                         }
             }
